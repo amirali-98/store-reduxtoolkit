@@ -5,8 +5,8 @@ import Layout from "./layout/Layout";
 export default function App() {
   return (
     <>
-      <Routes>
-        <Layout>
+      <Layout>
+        <Routes>
           <Route index element={<h1>Home</h1>} />
           <Route
             path="/products/:productId"
@@ -14,8 +14,8 @@ export default function App() {
           />
           <Route path="/cart" element={<h1>Cart</h1>} />
           <Route path="*" element={<h1>Not Found</h1>} />
-        </Layout>
-      </Routes>
+        </Routes>
+      </Layout>
     </>
   );
 }
