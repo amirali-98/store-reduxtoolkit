@@ -1,0 +1,23 @@
+.mainContent {
+  margin: 40px 0;
+}
+
+.footer {
+  background-color: #0a2463;
+  color: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #3e92cc;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    font-size: 0.7rem;
+  }
+}

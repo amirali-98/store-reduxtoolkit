@@ -22,7 +22,6 @@ button {
 
 @media screen and (max-width: 1200px) {
   body {
-    width: 100%;
     margin: 10px;
   }
 }
