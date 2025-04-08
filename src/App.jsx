@@ -2,12 +2,14 @@ import { Routes, Route } from "react-router-dom";
 
 import Layout from "./layout/Layout";
 
+import Home from "./pages/Home";
+
 export default function App() {
   return (
     <>
       <Layout>
         <Routes>
-          <Route index element={<h1>Home</h1>} />
+          <Route index element={<Home />} />
           <Route
             path="/products/:productId"
             element={<h1>Product Detail</h1>}
