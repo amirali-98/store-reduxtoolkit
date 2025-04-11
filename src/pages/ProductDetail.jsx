@@ -6,11 +6,15 @@ import { IoArrowBack } from "react-icons/io5";
 
 import styles from "./styles/ProductDetail.module.css";
 
+import { useTitle } from "../utils/hooks";
+
 export default function ProductDetail() {
   const { productId } = useParams();
   const product = useSelector(store =>
     store.products.products.find(p => p.id === +productId)
   );
+
+  useTitle(product.title);
 
   return (
     <div className={styles.container}>
