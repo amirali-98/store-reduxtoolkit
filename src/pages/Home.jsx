@@ -1,4 +1,5 @@
 import Category from "../components/Category";
+import ProductList from "../components/ProductList";
 import SearchForm from "../components/SearchForm";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <SearchForm />
       <Category />
+      <ProductList />
     </>
   );
 }
