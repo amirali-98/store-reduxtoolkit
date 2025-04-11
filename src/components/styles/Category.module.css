@@ -1,0 +1,22 @@
+.categories {
+  display: flex;
+  gap: 8px;
+  margin: 24px 0;
+  overflow: auto;
+  padding: 0 0 16px;
+}
+
+.categoryItem {
+  background-color: #3e92cc;
+  padding: 4px 8px;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+}
+
+.categoryItem:hover,
+.active {
+  background-color: #0a2463;
+}
