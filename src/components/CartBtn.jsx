@@ -1,31 +1,40 @@
-import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { TbShoppingCartPlus, TbTrash } from "react-icons/tb";
 
 import styles from "./styles/CartBtn.module.css";
 
-export default function CartBtn() {
-  const [quantity, setQuantity] = useState(0);
+import { add, remove } from "../features/cartSlice";
+
+import { calculateQuantity } from "../utils/helpers";
+
+export default function CartBtn({ product }) {
+  const cart = useSelector(store => store.cart);
+  const dispatch = useDispatch();
 
   function addHandler() {
-    setQuantity(quantity => quantity + 1);
+    dispatch(add(product));
   }
 
   function removeHandler() {
-    setQuantity(quantity => quantity - 1);
+    dispatch(remove(product));
   }
 
   return (
     <div className={styles.container}>
-      {quantity > 0 && (
+      {calculateQuantity(cart.items, product.id) > 0 && (
         <>
           <button className={styles.cartBtn} onClick={removeHandler}>
-            {quantity > 1 ? "-" : <TbTrash />}
+            {calculateQuantity(cart.items, product.id) > 1 ? "-" : <TbTrash />}
           </button>
-          <p>{quantity}</p>
+          <p>{calculateQuantity(cart.items, product.id)}</p>
         </>
       )}
       <button className={styles.cartBtn} onClick={addHandler}>
-        {quantity > 0 ? "+" : <TbShoppingCartPlus />}
+        {calculateQuantity(cart.items, product.id) > 0 ? (
+          "+"
+        ) : (
+          <TbShoppingCartPlus />
+        )}
       </button>
     </div>
   );

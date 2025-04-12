@@ -19,7 +19,7 @@ export default function ProductCard({ product }) {
         <Link to={`/products/${product.id}`} className={styles.detailLink}>
           <TbListDetails />
         </Link>
-        <CartBtn />
+        <CartBtn product={product} />
       </div>
     </div>
   );
