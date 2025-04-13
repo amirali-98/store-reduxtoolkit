@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { calculateTotalItems } from "../utils/helpers";
+import { calculateTotalCost, calculateTotalItems } from "../utils/helpers";
 
 const initialState = {
   items: [],
@@ -20,6 +20,7 @@ const cartSlice = createSlice({
       }
       state.totalItems = calculateTotalItems(state.items);
       state.isPending = true;
+      state.totalCost = calculateTotalCost(state.items);
     },
     remove: (state, action) => {
       if (state.items.find(i => +i.id === +action.payload.id).quantity > 1) {
@@ -29,6 +30,7 @@ const cartSlice = createSlice({
       }
       state.totalItems = calculateTotalItems(state.items);
       state.isPending = true;
+      state.totalCost = calculateTotalCost(state.items);
     },
   },
 });
