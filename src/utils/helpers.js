@@ -25,3 +25,17 @@ export function filterByCategory(products, category) {
   }
   return products;
 }
+
+export function setQueryString({ search, category }) {
+  console.log({ search, category });
+  const newQuery = {};
+  if (search && search !== "") {
+    newQuery.search = search;
+  }
+
+  if (category && category !== "all") {
+    newQuery.category = category;
+  }
+
+  return newQuery;
+}

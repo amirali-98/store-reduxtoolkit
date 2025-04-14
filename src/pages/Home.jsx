@@ -7,7 +7,7 @@ import SearchForm from "../components/SearchForm";
 import { useTitle } from "../utils/hooks";
 
 export default function Home() {
-  const [query, setQuery] = useState({});
+  const [query, setQuery] = useState({ search: "", category: "all" });
   useTitle("Online Shop");
   return (
     <>
