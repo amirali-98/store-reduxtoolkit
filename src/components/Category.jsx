@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import styles from "./styles/Category.module.css";
 
 import CATEGORIES from "../constants/Categories";
 
-export default function Category() {
+export default function Category({ setQuery }) {
   const [category, setCategory] = useState("all");
+  useEffect(() => {
+    setQuery(query => ({ ...query, category }));
+  }, [category]);
   return (
     <div className={styles.categories}>
       {CATEGORIES.map(c => (

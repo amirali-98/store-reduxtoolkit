@@ -3,12 +3,12 @@ import { FiSearch } from "react-icons/fi";
 
 import styles from "./styles/SearchForm.module.css";
 
-export default function SearchForm() {
+export default function SearchForm({ setQuery }) {
   const [search, setSearch] = useState("");
 
   function searchHandler(e) {
     e.preventDefault();
-    console.log(search);
+    setQuery(query => ({ ...query, search }));
   }
 
   return (
